@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    =======================================================================
+    File:         menus.xml
+    Author:       Takis Diakoumis
+    Description:  Menu and menu item definitions
+    Date:         $Date: 2006/06/14 15:04:55 $
+    Version:      $Revision: 1.4 $
+    =======================================================================
+-->
+
+
+<menus>
+
+    <menu name="File"
+          mnemonic="F">
+
+          <menu-item id="new-command"
+                     type="0"/>
+                     
+          <menu-item id="open-command"
+                     type="0"/>
+
+          <menu name="Recent Files"
+                mnemonic="R"
+                cache-name="recentFiles"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="save-command"
+                     type="0"/>
+
+          <menu-item id="save-as-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="print-command"
+                     type="0"/>
+
+          <menu-item id="page-setup-command"
+                     type="0"/>
+
+          <menu-item id="print-preview-command"
+                     type="0"/>
+        
+          <menu-item id="separator"/>
+
+          <menu-item id="exit-program-command"
+                     type="0"/>
+
+    </menu>
+
+    <menu name="Edit"
+          mnemonic="E">
+
+          <menu-item id="undo-command"
+                     type="0"/>
+                     
+          <menu-item id="redo-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+                     
+          <menu-item id="cut-command"
+                     type="0"/>
+
+          <menu-item id="copy-command"
+                     type="0"/>
+
+          <menu-item id="paste-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu name="Insert"
+                mnemonic="I">
+          
+              <menu-item name="Line After"
+                         type="0"
+                         mnemonic="A"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="insertAfter"/>
+
+              <menu-item name="Line Before"
+                         type="0"
+                         mnemonic="B"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="insertBefore"/>
+
+              <menu-item name="From File"
+                         type="0"
+                         mnemonic="F"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="insertFromFile"/>
+
+          </menu>
+
+          <menu name="Delete"
+                mnemonic="D">
+          
+              <menu-item name="Selection"
+                         type="0"
+                         mnemonic="S"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="deleteSelection"/>
+
+              <menu-item name="Line"
+                         type="0"
+                         mnemonic="L"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="deleteLine"/>
+
+              <menu-item name="Word"
+                         type="0"
+                         mnemonic="W"
+                         listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                         action-command="deleteWord"/>
+
+          </menu>
+          
+          <menu-item id="separator"/>
+
+          <menu name="Change Case"
+                mnemonic="C">
+          
+              <menu-item id="to-upper-case-command"
+                         type="0"/>
+                         
+              <menu-item id="to-lower-case-command"
+                         type="0"/>
+
+          </menu>
+          
+          <menu-item id="separator"/>
+                         
+          <menu-item name="Select All"
+                     type="0"
+                     mnemonic="S"
+                     accel-key="control A"
+                     listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                     action-command="selectAll"/>
+
+          <menu-item name="Select None"
+                     type="0"
+                     mnemonic="N"
+                     accel-key="ESCAPE"
+                     listener="org.executequery.actions.editcommands.TextSelectionCommand"
+                     action-command="selectNone"/>
+
+    </menu>
+
+    <menu name="Search"
+          mnemonic="S">
+
+          <menu-item id="find-command"
+                     type="0"/>
+                     
+          <menu-item id="find-next-command"
+                     type="0"/>
+                    
+          <menu-item id="find-previous-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="replace-command"
+                     type="0"/>
+
+          <menu-item id="replace-next-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+          
+          <menu-item id="goto-command"
+                     type="0"/>
+
+          <menu-item id="find-in-files"
+                     type="0"/>
+
+    </menu>
+
+    <menu name="View"
+          mnemonic="V"
+          cache-name="viewMenu">
+
+          <menu-item name="Output Console"
+                     type="1"
+                     mnemonic="C"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewConsole"
+                     cache-name="viewConsole"
+                     property-key="system.display.console"
+                     tool-tip="Opens the system output console"/>
+
+          <menu-item name="Connections"
+                     type="1"
+                     mnemonic="N"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewConnections"
+                     cache-name="viewConnections"
+                     property-key="system.display.connections"
+                     tool-tip="Opens the saved connections panel"/>
+
+          <menu-item name="Keywords"
+                     type="1"
+                     mnemonic="K"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewKeywords"
+                     cache-name="viewKeywords"
+                     property-key="system.display.keywords"
+                     tool-tip="Opens the keywords search and insert panel"/>
+
+          <menu-item name="SQL State Codes"
+                     type="1"
+                     mnemonic="Q"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewSqlStateCodes"
+                     cache-name="viewSqlStateCodes"
+                     property-key="system.display.state-codes"
+                     tool-tip="Opens the SQL State Codes docked panel"/>
+
+          <menu-item name="Drivers"
+                     type="1"
+                     mnemonic="N"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewDrivers"
+                     cache-name="viewDrivers"
+                     property-key="system.display.drivers"
+                     tool-tip="Opens JDBC drivers panel"/>
+
+          <menu-item name="System Properties"
+                     type="1"
+                     mnemonic="P"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewSystemProperties"
+                     cache-name="viewSystemProperties"
+                     property-key="system.display.systemprops"
+                     tool-tip="Opens the system properties palette"/>
+
+          <menu-item name="Status Bar"
+                     type="1"
+                     mnemonic="S"
+                     listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                     action-command="viewStatusBar"
+                     cache-name="viewStatusBar"
+                     property-key="system.display.statusbar"
+                     tool-tip="Displays the system status bar"/>
+                     
+          <menu-item id="separator"/>
+
+          <menu name="Tool Bars"
+                mnemonic="T">
+          
+              <menu-item name="File Tool Bar"
+                         type="1"
+                         mnemonic="F"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewFileTools"
+                         cache-name="viewFileTools"
+                         tool-tip="Displays the File tool bar"/>
+
+              <menu-item name="Edit Tool Bar"
+                         type="1"
+                         mnemonic="E"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewEditTools"
+                         cache-name="viewEditTools"
+                         tool-tip="Displays the Edit tool bar"/>
+
+              <menu-item name="Search Tool Bar"
+                         type="1"
+                         mnemonic="S"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewSearchTools"
+                         cache-name="viewSearchTools"
+                         tool-tip="Displays the View tool bar"/>
+
+              <menu-item name="Database Tool Bar"
+                         type="1"
+                         mnemonic="D"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewDatabaseTools"
+                         cache-name="viewDatabaseTools"
+                         tool-tip="Displays the database tool bar"/>
+
+              <menu-item name="Browser Tool Bar"
+                         type="1"
+                         mnemonic="B"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewBrowserTools"
+                         cache-name="viewBrowserTools"
+                         tool-tip="Displays the browser tool bar"/>
+
+              <menu-item name="Import/Export Tool Bar"
+                         type="1"
+                         mnemonic="X"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewImportExportTools"
+                         cache-name="viewImportExportTools"
+                         tool-tip="Displays the import/export tool bar"/>
+
+              <menu-item name="System Tool Bar"
+                         type="1"
+                         mnemonic="S"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewSystemTools"
+                         cache-name="viewSystemTools"
+                         tool-tip="Displays the System tool bar"/>
+
+              <menu-item id="separator"/>
+
+              <menu-item name="Customize"
+                         type="0"
+                         mnemonic="Z"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="customizeTools"
+                         tool-tip="Customize the tool bars"/>
+
+          </menu>
+
+          <!--
+          <menu name="Desktop Background"
+                mnemonic="B"
+                cache-name="desktopBackground"/>
+          -->
+
+          <!--
+          <menu name="Iconified Frames"
+                mnemonic="F">
+
+              <menu-item name="Show frame icon"
+                         type="2"
+                         mnemonic="S"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="showFrameIcon"
+                         cache-name="showFrameIcon"
+                         button-group="frameIconBehaviour"
+                         tool-tip="Display the frame icon when iconified"/>
+
+              <menu-item name="Hide frame icon"
+                         type="2"
+                         mnemonic="H"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="hideFrameIcon"
+                         cache-name="hideFrameIcon"
+                         button-group="frameIconBehaviour"
+                         tool-tip="Do not display the frame icon when iconified"/>
+
+          </menu>
+
+          <menu-item id="separator"/>
+
+          -->
+          
+          <menu name="Query Editor"
+                mnemonic="Q">
+
+              <menu-item name="Status Bar"
+                         type="1"
+                         mnemonic="S"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewEditorStatusBar"
+                         cache-name="viewEditorStatusBar"
+                         property-key="editor.display.statusbar"
+                         tool-tip="Display the editor's status bar"/>
+
+              <menu-item name="Line Numbers"
+                         type="1"
+                         mnemonic="L"
+                         listener="org.executequery.actions.viewcommands.ViewOptionsCommand"
+                         action-command="viewEditorLineNumbers"
+                         cache-name="viewEditorLineNumbers"
+                         property-key="editor.display.linenums"
+                         tool-tip="Display the editor's line numbers"/>
+
+          </menu>
+
+    </menu>
+
+    <menu name="Database"
+          mnemonic="D">
+
+          <menu name="Connections..."
+                cache-name="databaseConnect">
+
+              <menu-item id="connect-command"
+                         type="0"/>
+
+          </menu>
+
+          <menu-item id="database-disconnect-command"
+                     type="0"/>
+          
+          <menu-item id="separator"/>
+          
+          <menu-item id="create-table-command"
+                     type="0"/>
+
+          <menu-item id="create-index-command"
+                     type="0"/>
+
+          <menu-item id="execute-object"
+                     type="0"/>
+
+          <menu-item id="compare-data-types"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+                     
+          <menu-item id="generate-scripts-command"
+                     type="0"/>
+
+          <menu name="Generate ERD"
+                mnemonic="G">
+
+              <menu-item id="create-erd-command"
+                         type="0"/>
+                         
+              <menu-item id="map-erd-command"
+                         type="0"/>
+
+<!--
+              <menu-item name="Map existing database"
+                         type="0"
+                         mnemonic="M"
+                         listener="org.executequery.actions.databasecommands.CreateErdFromDatabaseCommand"
+                         tool-tip="Generate an ERD based on an existing database"/>
+-->
+          </menu>
+
+          <!--
+          <menu-item id="separator"/>
+
+          <menu-item id="database-properties-command"
+                     type="0"/>
+
+          <menu-item id="manage-conns-command"
+                     type="0"/>
+          -->
+
+    </menu>
+
+    <menu name="Tools"
+          mnemonic="T">
+
+          <menu-item id="editor-command"
+                     type="0"/>
+<!--
+          <menu-item id="browser-command"
+                     type="0"/>
+-->
+          <menu-item id="scratch-pad-command"
+                     type="0"/>
+
+          <menu-item id="user-keywords-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu name="Import Data"
+                mnemonic="I">
+
+              <menu-item id="import-xml-command"
+                         type="0"/>
+
+              <menu-item id="import-delimited-command"
+                         type="0"/>
+
+          </menu>
+
+          <menu name="Export Data"
+                mnemonic="X">
+
+              <menu-item id="export-xml-command"
+                         type="0"/>
+
+              <menu-item id="export-delimited-command"
+                         type="0"/>
+
+              <menu-item id="export-excel-command"
+                         type="0"/>
+
+          </menu>
+<!--
+          <menu-item name="Compare Table Data"
+                     type="0"
+                     mnemonic="C"
+                     listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                     action-command="compareTables"
+                     tool-tip="Compare data in two like tables"/>
+-->
+          <menu-item id="separator"/>
+
+          <menu name="System Logs"
+                mnemonic="L">
+
+              <menu-item name="System Output Log"
+                         type="0"
+                         mnemonic="S"
+                         listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                         action-command="viewSystemLog"
+                         tool-tip="View the system output log"/>
+
+              <menu-item name="Data Export Log"
+                         type="0"
+                         mnemonic="X"
+                         listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                         action-command="viewExportLog"
+                         tool-tip="View the data export log"/>
+
+              <menu-item name="Data Import Log"
+                         type="0"
+                         mnemonic="I"
+                         listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                         action-command="viewImportLog"
+                         tool-tip="View the data import log"/>
+
+<!--
+              <menu-item name="Import Error Log"
+                         type="0"
+                         mnemonic="R"
+                         listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                         action-command="viewImportErrLog"
+                         tool-tip="View the data import error log"/>
+-->
+              <menu-item id="separator"/>
+
+              <menu name="Reset Logs"
+                    mnemonic="R">
+
+                  <menu-item name="System Output Log"
+                             type="0"
+                             mnemonic="S"
+                             listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                             action-command="resetSystemLog"
+                             tool-tip="Reset the system output log"/>
+
+                  <menu-item name="Data Export Log"
+                             type="0"
+                             mnemonic="X"
+                             listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                             action-command="resetExportLog"
+                             tool-tip="Reset the data export log"/>
+
+                  <menu-item name="Data Import Log"
+                             type="0"
+                             mnemonic="I"
+                             listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                             action-command="resetImportLog"
+                             tool-tip="Reset the data import log"/>
+<!--
+                  <menu-item name="Import Error Log"
+                             type="0"
+                             mnemonic="R"
+                             listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                             action-command="resetImportErrLog"
+                             tool-tip="Reset the data import error log"/>
+-->
+                  <menu-item id="separator"/>
+
+                  <menu-item name="Reset All"
+                             type="0"
+                             mnemonic="A"
+                             listener="org.executequery.actions.toolscommands.OtherToolsCommand"
+                             action-command="resetAllLogs"
+                             tool-tip="Reset all logs"/>
+
+              </menu>
+                
+          </menu>
+          
+          <menu-item id="console-command"
+                     type="0"/>
+
+          <menu-item id="heap-memory-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="preferences-command"
+                     type="0"/>
+
+    </menu>
+
+    <menu name="Help"
+          mnemonic="H">
+
+          <menu-item id="help-command"
+                     type="0"/>
+
+          <menu-item id="help-command"
+                     name="Search for help on"
+                     type="0"
+                     mnemonic="S"
+                     accel-key="{-NULL-}"
+                     action-command="search_help_on"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="release-notes-command"
+                     type="0"/>
+
+          <menu-item id="license-command"
+                     type="0"/>
+
+          <menu-item id="check-update-command"
+                     type="0"/>
+
+          <menu-item id="visit-eq-command"
+                     type="0"/>
+
+          <menu-item id="separator"/>
+
+          <menu-item id="about-command"
+                     type="0"/>
+
+    </menu>
+
+</menus>

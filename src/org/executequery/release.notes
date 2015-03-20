@@ -1,0 +1,103 @@
+--- RELEASE NOTES ---
+
+Date: 17 September 2006
+
+Execute Query is an operating system independent database utility.
+
+Execute Query Version 3.0final
+------------------------------
+
+Execute Query has been significantly redesigned for version 3.0beta and includes
+a number of new features in addition to extensions and enhancements of all 
+previous components and functions.
+
+Central to the redesign has been the underlying layout of the application. The 
+MDI interface has been replaced by an easier to use and more responsive tabbed 
+panel interface. This has allowed some components that were previously almost
+stand-alone internal frames to be more central and controlling features such as
+the database schema browser which now functions as a primary and controlling 
+component.
+
+New feature highlights summary:
+
+  - Tabbed interface with draggable docked side panels.
+  - Multiple database connections.
+  - Redesigned query editor allowing more intuitive query execution
+    as well as allowing multiple result sets in a new tabbed environment.
+  - Wizard style functionality for the more complex tasks.
+  - Import/export enhancements including binary object support.
+  - Redesigned tools and tool configuration.
+  - Draggable/clickable SQL keyword list
+  - Improved JDBC driver detection
+  - Stored object execution
+  - Improved logging and file output
+  - Improved table printing
+  - Data type comparison across different databases
+  - Enhanced SQL script generation
+  - ... and many more
+
+
+Further usability features have been added including more customisation features 
+and keyboard shortcuts to often used editor commands including query execution
+and the commit and rollback of statements.
+
+The documentation has also been completely rebuilt.
+
+Thanks to those who submitted bugs and suggestions. Keep them coming!
+
+License:
+--------
+This is free software, and you are welcome to redistribute it under 
+certain conditions. See the GNU General Public License for details. 
+
+Deployment Environment:
+-----------------------
+At present the recommended Java 2 Runtime Environment (JRE) version is at least 
+1.5.0.
+
+This program has been tested under JRE version 1.5.0 on the following platforms:
+
+   -- Windows versions 2000 and XP
+   -- Solaris8, Solaris9 and Solaris10
+   -- Various flavours of Linux
+
+
+Startup files:
+--------------
+The application may be started by using the executable file eq.exe (Windows 
+only) or the Unix shell scripts eq.sh.
+
+Alternatively you may simply execute the Java archive eq.jar from the 
+installation directory using your installed Java 1.5 runtime environment.
+
+
+Source Code:
+------------
+Source code is available for download directly from the download link at
+executequery.org (where this program was downloaded). The source file is 
+typically named executequery-src-<version>.tar.gz.
+
+If you are interested in a particular feature but can not locate it within the 
+code, please contact myself at the above address and you will be pointed in the 
+right direction.
+
+Note: In line with the significant redesign of much of Execute Query, the 
+opportunity was taken to refactor much of the source code. Packages have been 
+reorganised and many classes renamed or merged with like objects.
+
+
+Web Site:
+---------
+Please visit executequery.org for updates and information on upcoming 
+releases including improved documentation. Use the relevant form to report
+any bugs or send an email directly to Takis Diakoumis at the address below. 
+Please consult the page Known Bugs of the help documentation before sending 
+any bug report. Requests for enhancements/improvements can also be made 
+via the site or email.
+
+Thank you for trying Execute Query.
+
+Takis Diakoumis
+takisd@executequery.org
+17 September 2006
+

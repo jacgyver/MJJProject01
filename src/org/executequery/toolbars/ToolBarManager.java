@@ -1,0 +1,108 @@
+/*
+ * ToolBarManager.java
+ *
+ * Copyright (C) 2002, 2003, 2004, 2005, 2006 Takis Diakoumis
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ */
+
+
+package org.executequery.toolbars;
+
+import org.underworldlabs.util.SystemProperties;
+import org.executequery.SystemUtilities;
+import org.underworldlabs.swing.toolbar.DefaultToolBarManager;
+
+/* ----------------------------------------------------------
+ * CVS NOTE: Changes to the CVS repository prior to the 
+ *           release of version 3.0.0beta1 has meant a 
+ *           resetting of CVS revision numbers.
+ * ----------------------------------------------------------
+ */
+
+/**
+ *
+ * @author   Takis Diakoumis
+ * @version  $Revision: 1.3 $
+ * @date     $Date: 2006/05/14 06:56:57 $
+ */
+public class ToolBarManager extends DefaultToolBarManager {
+    
+    /** Reference to the file tool bar */
+    public static final String FILE_TOOLS = "File Tools";
+    
+    /** Reference to the edit tool bar */
+    public static final String EDIT_TOOLS = "Edit Tools";
+    
+    /** Reference to the file tool bar */
+    public static final String SEARCH_TOOLS = "Search Tools";
+    
+    /** Reference to the database tool bar */
+    public static final String DATABASE_TOOLS = "Database Tools";
+
+    /** Reference to the database tool bar */
+    public static final String BROWSER_TOOLS = "Browser Tools";
+
+    /** Reference to the import/export tool bar */
+    public static final String IMPORT_EXPORT_TOOLS = "Import/Export Tools";
+
+    /** Reference to the file tool bar */
+    public static final String SYSTEM_TOOLS = "System Tools";
+    
+    public ToolBarManager() {
+        super(SystemUtilities.getUserPropertiesPath() + "toolbars.xml",
+              SystemProperties.getProperty("system", "toolbars.defaults"));
+
+        try {
+            buildToolbars(false);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+
+    /**
+     * Builds (or rebuilds) the tool bars for the current application.
+     *
+     * @param rebuild - whether this is a rebuild of an existing tool bar
+     */
+    public void buildToolbars(boolean rebuild) {
+        
+        if (rebuild) {
+            reset();
+        }
+        
+        buildToolBar(FILE_TOOLS, rebuild);
+        buildToolBar(EDIT_TOOLS, rebuild);
+        buildToolBar(SEARCH_TOOLS, rebuild);
+        buildToolBar(DATABASE_TOOLS, rebuild);
+        buildToolBar(IMPORT_EXPORT_TOOLS, rebuild);
+        buildToolBar(SYSTEM_TOOLS, rebuild);
+        buildToolBar(BROWSER_TOOLS, rebuild);
+
+        if (rebuild) {
+            fireToolbarsChanged();
+        }
+        
+    }
+    
+    
+}
+
+
+
+
